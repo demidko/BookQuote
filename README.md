@@ -10,7 +10,7 @@ The web app is available on [bookquote.app](https://bookquote.app) from any devi
 
 This application is suitable for those who have read many different books and want to remember a selection of author's worlds.
 
-## Features
+## Key features
 
 1. Search.
 2. Recommendations.
