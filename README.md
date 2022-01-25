@@ -1,14 +1,10 @@
 # BookQuote
 
-Application for reading books and compiling book collections.
+Application for reading books and compiling book collections. It's suitable for those who have read many different books and want to remember a selection of author's worlds.
 
 ## Usage
 
 The web app is available on [bookquote.app](https://bookquote.app) from any device.
-
-## Who is this app for?
-
-This application is suitable for those who have read many different books and want to remember a selection of author's worlds.
 
 ## Key features
 
