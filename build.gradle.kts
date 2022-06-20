@@ -1,39 +1,35 @@
 repositories {
   mavenCentral()
   maven("https://jitpack.io")
+  maven("https://repo.spring.io/milestone")
+  maven("https://repo.spring.io/snapshot")
 }
 plugins {
-  kotlin("jvm") version "1.6.10"
-  id("com.github.johnrengelman.shadow") version "7.1.2"
+  id("org.springframework.boot") version "3.0.0-SNAPSHOT"
+  id("io.spring.dependency-management") version "1.0.11.RELEASE"
+  kotlin("jvm") version "1.7.0"
+  kotlin("plugin.spring") version "1.7.0"
+  kotlin("plugin.serialization") version "1.7.0"
 }
 dependencies {
-  implementation("io.ktor:ktor-server-netty:1.6.7")
-  implementation("io.ktor:ktor-freemarker:1.6.7")
-  implementation("io.ktor:ktor-client-cio:1.6.7")
-  implementation("ch.qos.logback:logback-classic:1.2.10")
-  testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
-  testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
-  testImplementation("io.mockk:mockk:1.12.2")
+  implementation("org.springframework.boot:spring-boot-starter-web")
+  implementation("org.jetbrains.kotlin:kotlin-reflect")
+  implementation("com.github.demidko:telegram-storage:2022.05.30")
+  implementation("org.apache.commons:commons-csv:1.9.0")
+  implementation("org.apache.httpcomponents:httpclient:4.5.13")
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
+  testImplementation("org.amshove.kluent:kluent:1.68")
+  testImplementation("io.mockk:mockk:1.12.4")
 }
+version = "boot"
 tasks.compileKotlin {
-  kotlinOptions.jvmTarget = "17"
-  kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.time.ExperimentalTime"
+  kotlinOptions.jvmTarget = "18"
+  kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.time.ExperimentalTime", "-Xjsr305=strict", "-Xuse-k2")
 }
 tasks.compileTestKotlin {
-  kotlinOptions.jvmTarget = "17"
-  kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.time.ExperimentalTime"
+  kotlinOptions.jvmTarget = "18"
+  kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.time.ExperimentalTime", "-Xjsr305=strict", "-Xuse-k2")
 }
 tasks.test {
   useJUnitPlatform()
-}
-tasks.jar {
-  isZip64 = true
-  manifest.attributes("Main-Class" to "AppKt")
-}
-tasks.shadowJar {
-  minimize() // if build is unsuccessful, you can disable it
-  // also, if build still unsuccessful, you can try to add mergeServiceFiles() call
-}
-tasks.build {
-  dependsOn(tasks.shadowJar)
 }
