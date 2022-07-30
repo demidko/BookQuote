@@ -1,7 +1,7 @@
 # BookQuote
 
-Application for reading books and compiling book collections. This application is suitable for those who have read many
-different books and want to remember a selection of author's worlds.
+Web reader for compiling book collections. This application is suitable for those who have read a lot
+of different books and want to remember a selection of author's worlds.
 
 ## Usage
 
