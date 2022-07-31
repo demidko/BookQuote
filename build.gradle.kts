@@ -5,20 +5,19 @@ repositories {
   maven("https://jitpack.io")
 }
 plugins {
-  id("org.springframework.boot") version "3.0.0-SNAPSHOT"
-  id("io.spring.dependency-management") version "1.0.11.RELEASE"
   kotlin("jvm") version "1.7.10"
   kotlin("plugin.spring") version "1.7.10"
   kotlin("plugin.serialization") version "1.7.10"
+  id("org.springframework.boot") version "3.0.0-SNAPSHOT"
+  id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.4")
-  implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.10")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8")
+  implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("com.github.demidko:telegram-storage:2022.05.30")
-  implementation("org.apache.commons:commons-csv:1.9.0")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
-  testImplementation("org.amshove.kluent:kluent:1.68")
+  testImplementation("com.google.truth:truth:1.1.3")
   testImplementation("io.mockk:mockk:1.12.4")
 }
 tasks.compileKotlin {
