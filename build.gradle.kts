@@ -16,16 +16,17 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("com.github.demidko:telegram-storage:2022.05.30")
+  implementation("org.apache.commons:commons-csv:1.9.0")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("com.google.truth:truth:1.1.3")
-  testImplementation("io.mockk:mockk:1.12.4")
+  testImplementation("io.mockk:mockk:1.12.5")
 }
 tasks.compileKotlin {
-  kotlinOptions.jvmTarget = "17"
+  kotlinOptions.jvmTarget = "18"
   kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.time.ExperimentalTime", "-Xjsr305=strict")
 }
 tasks.compileTestKotlin {
-  kotlinOptions.jvmTarget = "17"
+  kotlinOptions.jvmTarget = "18"
   kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.time.ExperimentalTime", "-Xjsr305=strict")
 }
 tasks.test {
