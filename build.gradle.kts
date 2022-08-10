@@ -17,6 +17,7 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("com.github.demidko:telegram-storage:2022.05.30")
   implementation("org.apache.commons:commons-csv:1.9.0")
+  implementation("com.github.demidko:aot:2022.08.06")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("com.google.truth:truth:1.1.3")
   testImplementation("io.mockk:mockk:1.12.5")
